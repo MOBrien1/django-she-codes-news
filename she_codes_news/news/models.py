@@ -6,4 +6,5 @@ class NewsStory(models.Model):
     author = models.CharField(max_length=200)
     pub_date = models.DateTimeField()
     content = models.TextField()
+    img_url = models.URLField(max_length=200, blank=True, null=True)
 

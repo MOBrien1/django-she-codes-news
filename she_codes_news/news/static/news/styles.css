@@ -107,7 +107,12 @@ form {
 .author {
     background-color: #C3A6A0;
 }
+
 .content {
+    background-color: #C3A6A0;
+}
+
+.form-control {
     background-color: #C3A6A0;
 }
 
@@ -117,7 +122,7 @@ form label {
 }
 
 form input{
-    margin-left: 10px;
+    margin-left: 20px;
     margin-bottom: 10px;
 }
 

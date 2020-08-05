@@ -21,5 +21,17 @@ class StoryForm(ModelForm):
                     'class':'title',
                     'placeholder':'...',
                 }
+            ),
+            'author': forms.TextInput(
+                attrs={
+                    'class':'author',
+                    'placeholder':'...',
+                }
+            ),
+            'content': forms.Textarea(
+                attrs={
+                    'class':'content',
+                    'placeholder':'...',
+                }
             )
         }

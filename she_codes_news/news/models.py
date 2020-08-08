@@ -9,6 +9,9 @@ class NewsStory(models.Model):
     img_url = models.URLField(max_length=200, blank=True, null=True)
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name = "stories"
     )
 
+    def __str__(self):
+        return self.title

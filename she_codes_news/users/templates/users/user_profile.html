@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}  
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<h2>Profile</h2>
+
+<div>
+<p>Username:{{ profile_user.username }} <br>
+Email:{{ profile_user.email }}  
+</p>
+    {% if user == profile_user %}
+    <a href="{% url 'news:newStory' %}">Add new story</a> 
+    {% else %}
+    <p>You must be logged in to create new stories</p>
+    {% endif %}
+</div>
+
+<div id="all-stories">
+    {% for story in profile_user.stories.all %}
+        {% include "news/storyCard.html" with story=story position=forloop.counter %}
+    {% endfor %}
+</div>
+
+{% endblock %}

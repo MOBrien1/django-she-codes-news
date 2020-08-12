@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import ModelForm
-from .models import NewsStory
+from .models import NewsStory, Comment
 
 
 class StoryForm(ModelForm):
@@ -25,6 +25,19 @@ class StoryForm(ModelForm):
             'content': forms.Textarea(
                 attrs={
                     'class':'content',
+                    'placeholder':'...',
+                }
+            )
+        }
+
+class CommentForm(ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('author', 'comment_text')
+        widgets = {
+            'comment_text': forms.Textarea(
+                attrs={
+                    'class':'comment_text',
                     'placeholder':'...',
                 }
             )

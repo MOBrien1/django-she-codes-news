@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% for comment in comments %}
+<div class="comments">
+    <p class="comment_author">
+    {{ comment.author }}
+        <span>{{ comment.created_on }}</span>
+    </p>{{ comment.body | linebreaks }}
+</div>
+{% endfor %}
+
+<div class="comment-body">
+    {% if new_comment %}
+    <div class="alert alert-success" role="alert">
+        Your comment is awaiting moderation
+    </div>
+    {% else %}
+        <h3>Leave a comment</h3>
+        <form method="post">
+            {{ comment_form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+        </form>
+{% endif %}
+</div>
+
+{% endblock %}

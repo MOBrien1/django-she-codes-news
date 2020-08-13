@@ -12,9 +12,10 @@ body {
 }
 
 .story-card img {
-    width: 100%;
+    width: 98%;
     height: 300px;
     object-fit: cover;
+    border: 3px solid white;
 }
 
 #latest-stories {
@@ -55,7 +56,7 @@ body {
 #story-card-2 .story-card-text h3,
 #story-card-3 .story-card-text h3,
 #story-card-4 .story-card-text h3 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #story-card-2 .story-card-text h4,
@@ -70,6 +71,7 @@ body {
     width: 33%;
     height: 100%;
     margin-right: 5px;
+    border: 1px solid white;
 }
 
 #all-stories {
@@ -92,6 +94,7 @@ body {
     float: right;
     margin: 0 0 10px 10px;
     width: 50%;
+    border: 3px solid white;
 }
 
 form {
@@ -101,6 +104,10 @@ form {
 }
 
 .title {
+    background-color: #C3A6A0;
+}
+
+.comment_author {
     background-color: #C3A6A0;
 }
 
@@ -132,4 +139,51 @@ header {
 
 h2 {
     background-color: white;
+}
+
+.comments {
+    background-color: #C3A6A0;
+    color: #262220;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: solid white 20px;
+    margin-right: 50px;
+
+}
+
+a:hover {
+    color: darkslategray;
+}
+a:active {
+    color: darkslategray;
+}
+
+.comment_form label {
+    color: #262220;
+    margin-left: 10px;
+}
+
+.comment_form input{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-submit {
+    margin-left: 20px;
+    margin-bottom: 10px;
+
+}
+
+.create-account-form {
+    font-size: smaller;
+    background-color: #C3A6A0;
+}
+
+#story-wrapper {
+    background-color: #C3A6A0;
+}
+
+.login-form {
+    background-color: #C3A6A0;
 }

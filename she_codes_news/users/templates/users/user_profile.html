@@ -9,12 +9,12 @@
 
 <h2>Profile</h2>
 
-<div>
-<p>Username:{{ profile_user.username }} <br>
-Email:{{ profile_user.email }}  
+<div class="Profile-information" >
+<p>Username: {{ profile_user.username }} <br>
+Email: {{ profile_user.email }}  
 </p>
     {% if user == profile_user %}
-    <a href="{% url 'news:newStory' %}">Add new story</a> 
+    <a href="{% url 'news:newStory' %}">Contribute content</a> 
     {% else %}
     <p>You must be logged in to create new stories</p>
     {% endif %}

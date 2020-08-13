@@ -10,23 +10,25 @@
 {% for comment in comments %}
 <div class="comments">
     <p class="comment_author">
-    {{ comment.author }}
-        <span>{{ comment.created_on }}</span>
-    </p>{{ comment.body | linebreaks }}
+        {{ comment.comment_text }}<br> 
+        {{ comment.author }}<br>
+        {{ comment.created_date }}
+    </p>
+    
 </div>
 {% endfor %}
 
-<div class="comment-body">
+<div class="comment-approval">
     {% if new_comment %}
     <div class="alert alert-success" role="alert">
         Your comment is awaiting moderation
     </div>
     {% else %}
-        <h3>Leave a comment</h3>
+        <h2>Leave us a comment:</h2>
         <form method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
-            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+            <button type="submit" class="btn-submit">Submit</button>
         </form>
 {% endif %}
 </div>
